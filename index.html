@@ -9,28 +9,32 @@
 </head>
 <body>
     <header class="header-bg">
-        <section class="header">
-            <div class="logo"><img src="img/logo.png" alt=""></div>
-            <nav class="menu">
-                <ul>
+        <div id="header">
+            <div class="logo">
+                <img src="img/logo.png" alt="">
+            </div>
+            <nav id="nav">
+                <button aria-label="Abri menu" id="btn-mobile" aria-haspopup="true"  aria-controls="menu" aria-expanded="false">Menu
+                    <span id="hamburger"></span>
+                </button>
+                <ul id="menu" role="menu">
                     <li><a href="#clipe">Clipe</a></li>
-                    <li><a href="#Composicao">Composição</a></li>
-                    <li><a href="#">definir</a></li>
-                    <li><a href="#">definir</a></li>
+                    <li><a href="#composicao">Composição</a></li>
+                    <li><a href="#background">Background</a></li>
                 </ul>
             </nav>
-        </section>
+        </div>
     </header>
 
     <section class="hero">
     </section>
 
-    <h2 id="clipe">Clipe</h2>
+    <h2 id="clipe" class="h2">Clipe</h2>
     <section class="clipe">
         <iframe src="https://player.vimeo.com/video/297567496?h=e1c26a1baa" width="100%" height="500" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
     </section>
 
-    <h2 id="composicao">Composição</h2>
+    <h2 id="composicao" class="h2">Composição</h2>
     <section class="composicao">
         <div class="texto">
             <p><strong>"Stranger in Moscow"</strong> é uma canção do cantor e compositor americano <strong><a href="https://pt.wikipedia.org/wiki/Michael_Jackson" target="blank"></a>Michael Jackson</strong>, de seu nono álbum de estúdio, HIStory . A canção foi lançada como o sexto e último single mundialmente em 4 de novembro de 1996, mas não foi lançada nos Estados Unidos até 7 de julho de 1997 pela Epic Records . [1] A faixa foi escrita por Jackson em setembro de 1993, durante a parada da Dangerous World Tour em Moscou. Uma versão inicial da estrutura de acordes da faixa aparece no videogame Sonic the Hedgehog 3 ;de acordo com relatos conflitantes, Jackson e sua equipe compuseram músicas para o jogo antes de deixar o projeto. Jackson escreveu a letra como um poema antes de adaptá-la para a música.</p>
@@ -40,5 +44,23 @@
         </div>
     </section>
     
+    <h2 id="background" class="h2">Background</h2>
+    <section class="background">
+        <div class="img back">
+            <img src="img/img2" alt="">
+        </div>
+        <div class="img back">
+            <img src="img/img4.jpg" alt="">
+        </div>
+        <div class="img back">
+            <img src="img/img3.jpg" alt="">
+        </div>
+        <div class="texto"><p>“Stranger in Moscow” exemplifica Michael Jackson não como 'O Rei do Pop', mas simplesmente como um homem em uma terra estrangeira desconectada do mundo.
+        “Stranger in Moscow” foi escrita em um quarto de hotel em Moscou, possivelmente entre 13 e 16 de setembro de 1993, enquanto Michael estava em sua Dangerous World Tour . A música seria lançada como o single final do álbum HIStory em novembro de 1996. É talvez a música mais pessoal de Michael, já que suas letras são diretas e na primeira pessoa.</p></div>
+
+    </section>
+
+
+    <script src="script.js"></script>
 </body>
 </html>

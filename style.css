@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2? family = Rubik: ital, wght @ 0,300; 1,300 & display = swap');
+@import url('https://fonts.googleapis.com/css2?family=Bonheur+Royale&family=Dancing+Script:wght@400;500;600&family=Indie+Flower&display=swap');
 
 *{
     margin: 0;
@@ -9,38 +10,117 @@
     text-decoration: none;
 }
 
-img{
-    max-width: 100%;
+body{
+    background: #2f2f2f1e;
+}
+
+.logo{
+  padding: 5px;
+  font-size: 1.5rem;
+  font-weight: bold;  
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.logo img{
+    width: 150px;
+    padding: 10px;
 }
 
 .header-bg{
     background: #303030;
 }
 
-.header{
-    color: #fff;
+#header{
     max-width: 1200px;
     margin: 0 auto;
+    box-sizing: border-box; /*faz com que o maximo do tamanho seja o definido*/
+    height: 70px;
+    padding: 1rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 10px;
 }
 
-.logo img{
-    width: 120px;
-}
-
-.menu ul{
+#menu{
     display: flex;
-    flex-wrap: wrap;
+    list-style: none;
+    gap: .5rem;
 }
 
-.menu ul a{
+#menu a {
+    display: block;
+    padding: .5rem;
     color: #fff;
-    padding: 10px;
-    opacity: 0.9;
-    font-size: 1rem;
+    font-size: 1.5rem;
+    font-family: 'Bonheur Royale', cursive;
+}
+
+#btn-mobile{
+    display: none; /*deixando o botão invisivel*/
+}
+
+@media (max-width: 600px){ /*acima de 600*/
+    #menu{
+        /*display: none;*/ /*no normal ele vai esta display none */
+        display: block;
+        position: absolute; /*se eu digo que é absoluto eu tenho que por o tamanho*/
+        width: 100%;
+        top: 70px;
+        right: 0;
+        background: #e7e7e7;
+        height: 0px;
+        transition: 0.6s;
+        z-index: 1000;
+        visibility: hidden;
+        overflow-y: hidden;/*esconde o elemento enquanto não tem o tamanho total*/
+    }
+    #nav.active #menu{ /*no van, quando o nav tiver a classe de active, eu quero falar com o menu*/
+        height:calc(100vh - 70px); /*100% da altura da tela, mas como ele tem um top de 70px, eu fiz a subtração para não ter o scroll*/
+        visibility: visible;
+        overflow-y: auto; /*caso tenha mais itens que o total da tela*/
+    }
+    #menu a {
+        padding: 1rem 0;
+        margin: 0 1rem;
+        border-bottom: solid 2px rgba(0, 0, 0, 0.788);
+        color: black;
+    }
+    #btn-mobile{
+        display: flex;
+        padding: 0.5rem 1rem;
+        font-size: 1rem;
+        border: none;
+        background: none;
+        cursor: pointer;
+        gap: 0.5rem;
+        color: white;
+    }
+    #hamburger{
+        border-top: 2px solid;
+        width: 20px;
+        display: block;
+    }
+    #hamburger::after, #hamburger::before{
+        content: ''; /*eu tenho que ter o contente para usar o after e before*/
+        display: block; /*coloquei como block para as configurações funcionarem*/
+        width: 20px;
+        height: 2px;
+        background: currentColor;
+        margin-top: 5px;
+        transition: 0.3s;
+        position: relative;
+    }
+    #nav.active #hamburger{
+        border-top-color: transparent;
+    }
+    #nav.active #hamburger::after{
+        transform: rotate(-135deg);
+        top: -7px;
+    }
+    #nav.active #hamburger::before{
+        transform: rotate(135deg);
+    }
 }
 
 .hero{
@@ -49,10 +129,11 @@ img{
     height: 100vh;
 }
 
-#clipe {
+.h2 {
+    font-family: 'Bonheur Royale', cursive;
     max-width: 1200px;
     margin: 20px auto; 
-    font-size: 3.5rem;
+    font-size: 3.6rem;
     padding: 60px 10px;
 }
 
@@ -89,6 +170,7 @@ img{
     border-top: 4px solid #303030;
     align-items: center;
     justify-content: center;
+    
 }
 
 .texto{
@@ -98,8 +180,31 @@ img{
     text-align: justify;
 }
 
-.img{
-    width: 400px;
-    padding: 10px;
+.img img{
+    width: 350px;
+    padding: 20px;
+}
 
+.back img{
+    width: 350px;
+    height: 400px;
+    padding: 20px;
+}
+
+#background {
+    max-width: 1200px;
+    margin: 20px auto; 
+    font-size: 3.5rem;
+    padding: 60px 10px;
+}
+
+.background{
+    display: flex;
+    max-width: 1200px;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    border-bottom: 4px solid #303030;
+    border-top: 4px solid #303030;
+    align-items: center;
+    justify-content: center;
 }
